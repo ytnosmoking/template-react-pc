@@ -1,11 +1,12 @@
+import SvgIcon from 'common/SvgIcon';
 
+const TestView = () => {
+  return (
+    <div className="bg1">
+      this is Test View
+      <SvgIcon iconClass="change" className="testGold" />
+    </div>
+  );
+};
 
-
-const TestView = ()=>{
-  return <div>
-    this is Test View
-  </div>
-  
-}
-
-export default TestView
+export default TestView;

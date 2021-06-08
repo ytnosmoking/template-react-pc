@@ -6,6 +6,7 @@ const {
   fixBabelImports,
   addDecoratorsLegacy,
   addWebpackAlias,
+  addWebpackModuleRule
 } = require('customize-cra')
 
 
@@ -155,5 +156,15 @@ module.exports = override(
     'utils': path.resolve(__dirname, 'src/utils'),
     'styles': path.resolve(__dirname, 'src/styles'),
     'assets': path.resolve(__dirname, 'src/assets'),
+  }),
+  addWebpackModuleRule({
+    test: /\.svg$/,
+    include: [resolve('src/icons')],
+    use: [
+      {
+        loader: 'svg-sprite-loader',
+        options: { symbolId: "icon-[name]" }
+      }]
   })
+
 )
